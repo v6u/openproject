@@ -1,39 +1,30 @@
 app:
     name: openproject
     code: OPENPROJECT 
-    notify: bkoshy@ecloudcontrol.com
+    notify: appz@ecloudcontrol.com
 
 build:
-    version: 0.4
+    version: 11.3
     env: DEV
     build_file: none
     output_files: output/*.zip
     image_template: openproject-11.3
 
 deploy:
-    context: bibin-ecloudcontrol/DEV
-    #type: statefulset
+    context: alpha/DEV
     replicas: 1
     port:
     - 80
     
-volumes:
-  - claim: vault-data
-    mount: /appz/data
-    name: data
-    size: 5Gi
-
 properties:
-    SECRET_KEY_BASE: f2J4YWlQm1LExVuPtDsPJElcikPfFZKz
+    SECRET_KEY_BASE: 
+      vault: SECRET_KEY_BASE
     PGDATA: /appz/data/
     POSTGRES_USER: openproject
     POSTGRES_PASSWORD: 
       vault: POSTGRESQL_OPENPROJECT_PASSWORD
-    POSTGRES_HOST: postgresdb
+    POSTGRES_HOST: postgres13-master-13-x
     POSTGRES_PORT: 5432
     POSTGRES_DB: openproject
-    APACHE_LOG_DIR: /appz/log/
-    #SERVER_HOSTNAME: 172.18.45.183
-    
-    revision: 27
-    
+        
+    revision: 33
