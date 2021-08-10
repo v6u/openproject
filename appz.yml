@@ -1,5 +1,5 @@
 app:
-    name: openproject
+    name: OpenProject
     code: OPENPROJECT 
     notify: appz@ecloudcontrol.com
 
