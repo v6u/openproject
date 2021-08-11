@@ -25,4 +25,4 @@ properties:
     POSTGRES_USER: openproject
     POSTGRES_PASSWORD: 
       vault: POSTGRESQL_OPENPROJECT_PASSWORD
-    revision: 33
+    revision: 34
