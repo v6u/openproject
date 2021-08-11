@@ -1,7 +1,7 @@
 app:
     name: OpenProject
     code: OPENPROJECT 
-    notify: appz@ecloudcontrol.com
+    notify: vpatteri@ecloudcontrol.com
 
 build:
     version: 11.3
@@ -11,7 +11,7 @@ build:
     image_template: openproject-11.3
 
 deploy:
-    context: alpha/DEV
+    context: v6u/DEV
     replicas: 1
     port:
     - 80
